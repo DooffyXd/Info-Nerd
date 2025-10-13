@@ -75,4 +75,45 @@ document.addEventListener('DOMContentLoaded', () => {
             observer.observe(element);
         });
     }
+
+    // --- FORMULÁRIO DE CONTATO VIA WHATSAPP (NOVO CÓDIGO) ---
+    const whatsappForm = document.getElementById('whatsapp-form');
+
+    if (whatsappForm) {
+        whatsappForm.addEventListener('submit', function(event) {
+            // Previne o envio padrão do formulário
+            event.preventDefault();
+
+            // Número de telefone para onde a mensagem será enviada
+            const numeroComercial = '5511918611301';
+
+            // Pega os valores dos campos do formulário
+            const nome = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const telefoneCliente = document.getElementById('phone').value;
+            const equipamento = document.getElementById('equipamento').value;
+            const defeito = document.getElementById('message').value;
+
+            // Monta a mensagem que será enviada
+            const mensagem = `Olá! Gostaria de solicitar um orçamento.
+-----------------------------
+*Nome:* ${nome}
+*E-mail:* ${email}
+*Telefone:* ${telefoneCliente}
+*Equipamento:* ${equipamento}
+*Defeito:* ${defeito}
+-----------------------------
+Aguardando contato.`;
+
+            // Codifica a mensagem para ser usada em uma URL
+            const mensagemCodificada = encodeURIComponent(mensagem);
+
+            // Cria o link do WhatsApp
+            const urlWhatsApp = `https://wa.me/${numeroComercial}?text=${mensagemCodificada}`;
+
+            // Abre o WhatsApp em uma nova aba
+            window.open(urlWhatsApp, '_blank');
+        });
+    }
+
 });

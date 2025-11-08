@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale:1.0">
     <title>Loja - Info Nerd</title>
     <meta name="description" content="Encontre os melhores acessórios e periféricos para seu computador. Mouses, teclados, headsets e mais.">
     
@@ -10,7 +10,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family:Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     
@@ -40,12 +40,8 @@
                 <h2 class="section-title animate-on-scroll">Nossa Loja</h2>
                 <p class="section-subtitle animate-on-scroll">Os melhores acessórios e periféricos para seu setup.</p>
                 
-                <!-- NOVOS CONTROLES DE FILTRO E PESQUISA -->
+                <!-- ATUALIZADO: Ordem dos filtros invertida -->
                 <div class="loja-controles animate-on-scroll">
-                    <div class="search-wrapper">
-                        <i class="fas fa-search"></i>
-                        <input type="text" id="search-bar" placeholder="O que você está procurando?">
-                    </div>
                     
                     <select id="category-filter" class="builder-select">
                         <option value="todos">Todas as Categorias</option>
@@ -64,14 +60,17 @@
                         <option value="air-cooler">Air Cooler</option>
                         <option value="water-cooler">Water Cooler</option>
                     </select>
+
+                    <div class="search-wrapper">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="search-bar" placeholder="O que você está procurando?">
+                    </div>
                 </div>
 
-                <!-- O Grid de Produtos agora está vazio. O JS vai preenchê-lo. -->
                 <div id="loja-grid" class="loja-grid">
                     <!-- Produtos serão inseridos aqui pelo JavaScript -->
                 </div>
                 
-                <!-- Mensagem para quando a busca não encontrar nada -->
                 <p id="not-found-message" class="not-found" style="display: none;">
                     Nenhum produto encontrado com esses filtros.
                 </p>

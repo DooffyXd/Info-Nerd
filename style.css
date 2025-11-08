@@ -177,7 +177,7 @@ section {
 .hero {
     /* min-height: 100vh; */ /* REMOVIDO para diminuir rolagem */
     padding-top: 180px;     
-    padding-bottom: 120px;  
+    padding-bottom: 10px;  
     display: flex;
     align-items: center;
     text-align: center;

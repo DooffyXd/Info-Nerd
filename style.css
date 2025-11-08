@@ -403,7 +403,6 @@ section {
     padding-top: 140px; 
 }
 
-/* NOVOS ESTILOS PARA CONTROLES DA LOJA */
 .loja-controles {
     display: flex;
     justify-content: space-between;
@@ -413,7 +412,7 @@ section {
 
 .search-wrapper {
     position: relative;
-    flex-grow: 1; /* Faz a barra de pesquisa ocupar mais espaço */
+    flex-grow: 1; 
 }
 
 .search-wrapper i {
@@ -426,7 +425,7 @@ section {
 
 #search-bar {
     width: 100%;
-    padding: 15px 15px 15px 45px; /* Espaço para o ícone */
+    padding: 15px 15px 15px 45px; 
     background-color: #2a2a2a;
     border: 1px solid #444;
     border-radius: 8px;
@@ -442,11 +441,9 @@ section {
 }
 
 #category-filter {
-    /* Reutiliza o estilo do builder */
     min-width: 250px; 
 }
 
-/* Responsividade para os filtros */
 @media (max-width: 768px) {
     .loja-controles {
         flex-direction: column;
@@ -456,7 +453,6 @@ section {
     }
 }
 
-/* Mensagem de "Não encontrado" */
 .not-found {
     text-align: center;
     font-size: 1.2rem;
@@ -465,11 +461,13 @@ section {
 }
 
 
-/* Grid de Produtos (Sem alteração) */
+/* -- ATUALIZADO: Grid da Loja -- */
 .loja-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-    gap: 30px;
+    /* ATUALIZADO: de 300px para 250px para caberem 4 colunas */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    /* ATUALIZADO: gap reduzido */
+    gap: 20px;
 }
 
 .produto-card {
@@ -485,31 +483,35 @@ section {
 }
 .produto-card img {
     width: 100%;
-    height: 250px; 
+    /* ATUALIZADO: altura da imagem reduzida */
+    height: 200px; 
     object-fit: cover; 
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 .produto-info {
-    padding: 25px;
+    /* ATUALIZADO: padding reduzido */
+    padding: 20px;
     display: flex;
     flex-direction: column;
-    /* Remove a altura fixa para o card crescer com a descrição */
 }
 .produto-info h3 {
-    font-size: 1.4rem;
+    /* ATUALIZADO: fonte reduzida */
+    font-size: 1.2rem;
     margin-bottom: 10px;
 }
 .produto-info p {
     color: var(--cor-texto-secundario);
-    font-size: 0.9rem;
-    margin-bottom: 20px;
+    /* ATUALIZADO: fonte reduzida e margem */
+    font-size: 0.85rem;
+    margin-bottom: 15px;
     flex-grow: 1; 
 }
 .preco {
-    font-size: 1.8rem;
+    /* ATUALIZADO: fonte e margem reduzidas */
+    font-size: 1.5rem;
     font-weight: 700;
     color: var(--cor-acento);
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 .produto-info .btn {
     width: 100%;
@@ -618,7 +620,7 @@ body.pagina-orcamento .contato {
     border: none;
     cursor: pointer;
 }
-#btn-finalzar-pc i {
+#btn-finalizar-pc i {
     margin-right: 8px;
 }
 

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Info Nerd - Soluções em Tecnologia</title>
-    <meta name="description" content="A melhor assistência técnica da região. Reparos expressos para notebooks, PCs e celulares com garantia e os melhores técnicos. Peça seu orçamento.">
+    <meta name="description" content="A melhor assistência técnica da região. Reparos expressos para notebooks, PCs com garantia e os melhores técnicos. Peça seu orçamento.">
     
     <link rel="icon" type="image/png" href="favicon.png">
 
@@ -20,16 +20,16 @@
 
     <header class="header" id="header">
         <div class="container">
-            <a href="#" class="logo">Info <span>Nerd</span></a>
+            <a href="index.html" class="logo">Info <span>Nerd</span></a>
             <nav class="navbar">
                 <a href="#inicio">Início</a>
                 <a href="#servicos">Serviços</a>
                 <a href="#diferenciais">Diferenciais</a>
-                <a href="#contato">Orçamento</a>
-                <a href="#loja">loja</a>
+                <a href="orcamento.html">Orçamento</a>
+                <a href="loja.html">Loja</a>
             </nav>
             <button class="menu-icon" id="menu-icon" aria-label="Abrir menu de navegação" aria-expanded="false">
-                <i class="fas fa-bars"></i>
+                <i class="fas fa-bars" id="menu-toggle-icon"></i>
             </button>
         </div>
     </header>
@@ -39,10 +39,10 @@
             <div class="container">
                 <div class="hero-text">
                     <h1 class="animate-on-scroll">Seu dispositivo quebrou? Nós temos a solução.</h1>
-                    <p class="animate-on-scroll">Assistência técnica de alta performance para notebooks, computadores e celulares. Diagnóstico gratuito e reparo em tempo recorde.</p>
+                    <p class="animate-on-scroll">Assistência técnica de alta performance para notebooks, computadores e Diagnóstico gratuito e reparo em tempo recorde.</p>
                     <div class="hero-buttons animate-on-scroll">
-                        <a href="#contato" class="btn btn-primary">Orçamento Rápido</a>
-                        <a href="#servicos" class="btn btn-secondary">Ver Serviços</a>
+                        <a href="orcamento.html" class="btn btn-primary">Fazer Orçamento</a>
+                        <a href="loja.html" class="btn btn-secondary">Ver Nossa Loja</a>
                     </div>
                 </div>
             </div>
@@ -50,24 +50,25 @@
 
         <section id="servicos" class="servicos">
             <div class="container">
-                <h2 class="section-title animate-on-scroll">Serviços Especializados</h2>
-                <p class="section-subtitle animate-on-scroll">Do simples ao complexo, cuidamos de tudo para você.</p>
+                <h2 class="section-title animate-on-scroll">O que você precisa?</h2>
+                <p class="section-subtitle animate-on-scroll">Escolha uma de nossas soluções principais.</p>
                 <div class="servicos-grid">
-                    <div class="servico-card animate-on-scroll">
-                        <i class="fas fa-laptop-medical"></i>
-                        <h3>Reparo de Notebooks</h3>
-                        <p>Troca de telas, teclados, reparos em placa-mãe, upgrade de SSD e memória RAM.</p>
-                    </div>
-                    <div class="servico-card animate-on-scroll">
-                        <i class="fas fa-desktop"></i>
-                        <h3>Manutenção de PCs</h3>
-                        <p>Montagem de PCs gamer, formatação com backup, remoção de vírus e otimização.</p>
-                    </div>
-                    <div class="servico-card animate-on-scroll">
-                        <i class="fas fa-mobile-screen-button"></i>
-                        <h3>Montagem de Computador</h3>
-                        <p>Montagem de computador para trabalho, estudo e gamer.</p>
-                    </div>
+                    
+                    <a href="loja.html" class="servico-card animate-on-scroll">
+                        <i class="fas fa-shopping-cart"></i> <h3>Nossa Loja</h3>
+                        <p>Acessórios, periféricos e tudo que você precisa para o seu setup.</p>
+                    </a>
+                    
+                    <a href="monteseupc.html" class="servico-card animate-on-scroll">
+                        <i class="fas fa-tools"></i> <h3>Monte seu PC</h3>
+                        <p>Crie o computador dos seus sonhos com nossa ferramenta interativa.</p>
+                    </a>
+
+                    <a href="orcamento.html" class="servico-card animate-on-scroll">
+                        <i class="fas fa-laptop-medical"></i> <h3>Faça seu Orçamento</h3>
+                        <p>Descreva seu problema ou necessidade e receba um diagnóstico gratuito.</p>
+                    </a>
+
                 </div>
             </div>
         </section>
@@ -104,65 +105,14 @@
             </div>
         </section>
         
-        <section id="contato" class="contato">
-            <div class="container">
-                <div class="contato-wrapper">
-                    <div class="contato-info">
-                        <h2 class="section-title animate-on-scroll">Peça seu orçamento. É fácil e rápido.</h2>
-                        <p class="animate-on-scroll">Preencha os dados e clique em "Enviar Agora" para nos chamar diretamente no WhatsApp com as informações do seu orçamento.</p>
-                        <div class="info-item animate-on-scroll">
-                            <i class="fab fa-whatsapp"></i>
-                            <a href="https://wa.me/5511918611301" target="_blank" rel="noopener noreferrer">(11) 91861-1301</a>
-                        </div>
-                        <div class="info-item animate-on-scroll">
-                            <i class="fas fa-envelope"></i>
-                            <a href="mailto:infonerd.assistenciatec@gmail.com
-">infonerd.assistenciatec@gmail.com
-</a>
-                        </div>
-                        
-                    </div>
-                    <form class="contato-form animate-on-scroll" id="whatsapp-form">
-                        
-                        <label for="name" class="sr-only">Nome Completo</label>
-                        <input type="text" id="name" name="name" placeholder="Seu nome completo" required>
-                        
-                        <label for="email" class="sr-only">E-mail</label>
-                        <input type="email" id="email" name="email" placeholder="Seu melhor e-mail" required>
-                        
-                        <label for="phone" class="sr-only">WhatsApp</label>
-                        <input type="tel" id="phone" name="phone" placeholder="Seu WhatsApp" required>
-                        
-                        <label for="equipamento" class="sr-only">Tipo de Equipamento</label>
-                        <select name="equipamento" id="equipamento" required>
-                            <option value="" disabled selected>Qual o seu equipamento?</option>
-                            <option value="Notebook">Notebook</option>
-                            <option value="Computador (Desktop)">Computador (Desktop)</option>
-                        
-                        </select>
-
-                        <label for="message" class="sr-only">Descrição do Defeito</label>
-                        <textarea name="message" id="message" rows="4" placeholder="Descreva o defeito com o máximo de detalhes..." required></textarea>
-                        
-                        <button type="submit" class="btn btn-primary">Enviar Agora</button>
-                    </form>
-                </div>
-            </div>
-        </section>
-    </main>
+        </main>
 
     <footer class="footer">
         <div class="container">
-            <p>© 2025 Info Tech. Feito para resolver.</p>
+            <p>© 2025 Info Nerd. Feito para resolver.</p>
         </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
-
-

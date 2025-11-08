@@ -40,51 +40,42 @@
                 <h2 class="section-title animate-on-scroll">Nossa Loja</h2>
                 <p class="section-subtitle animate-on-scroll">Os melhores acessórios e periféricos para seu setup.</p>
                 
-                <div class="loja-grid">
-                    
-                    <!-- Produto 1 (Exemplo) -->
-                    <div class="produto-card animate-on-scroll">
-                        <img src="https://placehold.co/600x400/1E1E1E/00f5c3?text=Mouse+Gamer" alt="Mouse Gamer">
-                        <div class="produto-info">
-                            <h3>Mouse Gamer XYZ</h3>
-                            <p>Sensor de 16.000 DPI, 8 botões programáveis e iluminação RGB.</p>
-                            <span class="preco">R$ 249,90</span>
-                            <!-- ATUALIZADO: Botão é um link direto para o Mercado Pago -->
-                            <a href="SEU_LINK_DO_MERCADO_PAGO_AQUI_1" target="_blank" class="btn btn-primary">
-                                <i class="fas fa-credit-card"></i> Comprar (Pix ou Cartão)
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Produto 2 (Exemplo) -->
-                    <div class="produto-card animate-on-scroll">
-                        <img src="https://placehold.co/600x400/1E1E1E/00f5c3?text=Teclado" alt="Teclado Mecânico">
-                        <div class="produto-info">
-                            <h3>Teclado Mecânico</h3>
-                            <p>Switches Blue, ABNT2, 100% anti-ghosting e iluminação personalizável.</p>
-                            <span class="preco">R$ 399,90</span>
-                            <!-- ATUALIZADO: Botão é um link direto para o Mercado Pago -->
-                            <a href="SEU_LINK_DO_MERCADO_PAGO_AQUI_2" target="_blank" class="btn btn-primary">
-                                <i class="fas fa-credit-card"></i> Comprar (Pix ou Cartão)
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Produto 3 (Exemplo) -->
-                    <div class="produto-card animate-on-scroll">
-                        <img src="https://placehold.co/600x400/1E1E1E/00f5c3?text=Headset" alt="Headset Gamer">
-                        <div class="produto-info">
-                            <h3>Headset Gamer 7.1</h3>
-                            <p>Som Surround 7.1, microfone com cancelamento de ruído e design confortável.</p>
-                            <span class="preco">R$ 319,90</span>
-                            <!-- ATUALIZADO: Botão é um link direto para o Mercado Pago -->
-                            <a href="SEU_LINK_DO_MERCADO_PAGO_AQUI_3" target="_blank" class="btn btn-primary">
-                                <i class="fas fa-credit-card"></i> Comprar (Pix ou Cartão)
-                            </a>
-                        </div>
+                <!-- NOVOS CONTROLES DE FILTRO E PESQUISA -->
+                <div class="loja-controles animate-on-scroll">
+                    <div class="search-wrapper">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="search-bar" placeholder="O que você está procurando?">
                     </div>
                     
+                    <select id="category-filter" class="builder-select">
+                        <option value="todos">Todas as Categorias</option>
+                        <option value="fone">Fone</option>
+                        <option value="headset">Headset</option>
+                        <option value="teclado">Teclado</option>
+                        <option value="mouse">Mouse</option>
+                        <option value="mousepad">Mousepad</option>
+                        <option value="gabinete">Gabinete</option>
+                        <option value="fonte">Fonte (PSU)</option>
+                        <option value="placa-mae">Placa-Mãe</option>
+                        <option value="memoria">Memória RAM</option>
+                        <option value="ssd">SSD</option>
+                        <option value="hd">HD</option>
+                        <option value="placa-video">Placa de Vídeo</option>
+                        <option value="air-cooler">Air Cooler</option>
+                        <option value="water-cooler">Water Cooler</option>
+                    </select>
                 </div>
+
+                <!-- O Grid de Produtos agora está vazio. O JS vai preenchê-lo. -->
+                <div id="loja-grid" class="loja-grid">
+                    <!-- Produtos serão inseridos aqui pelo JavaScript -->
+                </div>
+                
+                <!-- Mensagem para quando a busca não encontrar nada -->
+                <p id="not-found-message" class="not-found" style="display: none;">
+                    Nenhum produto encontrado com esses filtros.
+                </p>
+
             </div>
         </section>
     </main>
@@ -98,3 +89,5 @@
     <script src="script.js"></script>
 </body>
 </html>
+
+

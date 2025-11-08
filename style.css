@@ -412,7 +412,7 @@ section {
 
 .search-wrapper {
     position: relative;
-    /* ATUALIZADO: Deixei os dois com flex-grow: 1 */
+    /* ATUALIZADO: Pesquisa ocupa o espaço que sobrar */
     flex-grow: 1; 
 }
 
@@ -442,15 +442,18 @@ section {
 }
 
 #category-filter {
-    /* ATUALIZADO: Removido min-width e adicionado flex-grow */
-    flex-grow: 1; 
+    /* ATUALIZADO: Categoria tem um tamanho fixo */
+    min-width: 300px;
+    flex-grow: 0; /* Não deixa crescer */
 }
 
 @media (max-width: 768px) {
     .loja-controles {
         flex-direction: column;
     }
-    /* Esta regra já fazia o que precisava no mobile */
+    #category-filter {
+        min-width: 100%; /* No mobile, ocupa 100% */
+    }
 }
 
 .not-found {
@@ -511,22 +514,19 @@ section {
     text-align: center;
 }
 
-/* ATUALIZADO: Força 2 colunas no mobile para a loja */
 @media (max-width: 768px) {
     .loja-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 colunas */
-        gap: 15px; /* Gap menor para caber */
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 15px; 
     }
-    
-    /* Ajustes finos para os cards menores */
     .produto-info {
         padding: 15px;
     }
     .produto-info h3 {
-        font-size: 1rem; /* Fonte menor no mobile */
+        font-size: 1rem; 
     }
     .produto-info .btn {
-        padding: 10px 15px; /* Botão menor */
+        padding: 10px 15px; 
         font-size: 0.9rem;
     }
     .preco {

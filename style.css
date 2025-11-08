@@ -443,7 +443,7 @@ section {
 
 #category-filter {
     /* ATUALIZADO: Categoria tem um tamanho fixo */
-    min-width: 300px;
+    min-width: 200px;
     flex-grow: 0; /* Não deixa crescer */
 }
 

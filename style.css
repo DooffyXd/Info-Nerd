@@ -412,6 +412,7 @@ section {
 
 .search-wrapper {
     position: relative;
+    /* ATUALIZADO: Deixei os dois com flex-grow: 1 */
     flex-grow: 1; 
 }
 
@@ -441,16 +442,15 @@ section {
 }
 
 #category-filter {
-    min-width: 250px; 
+    /* ATUALIZADO: Removido min-width e adicionado flex-grow */
+    flex-grow: 1; 
 }
 
 @media (max-width: 768px) {
     .loja-controles {
         flex-direction: column;
     }
-    #category-filter {
-        min-width: 100%;
-    }
+    /* Esta regra já fazia o que precisava no mobile */
 }
 
 .not-found {
@@ -461,12 +461,10 @@ section {
 }
 
 
-/* -- ATUALIZADO: Grid da Loja -- */
+/* -- Grid da Loja -- */
 .loja-grid {
     display: grid;
-    /* ATUALIZADO: de 300px para 250px para caberem 4 colunas */
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
-    /* ATUALIZADO: gap reduzido */
     gap: 20px;
 }
 
@@ -483,31 +481,26 @@ section {
 }
 .produto-card img {
     width: 100%;
-    /* ATUALIZADO: altura da imagem reduzida */
     height: 200px; 
     object-fit: cover; 
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 .produto-info {
-    /* ATUALIZADO: padding reduzido */
     padding: 20px;
     display: flex;
     flex-direction: column;
 }
 .produto-info h3 {
-    /* ATUALIZADO: fonte reduzida */
     font-size: 1.2rem;
     margin-bottom: 10px;
 }
 .produto-info p {
     color: var(--cor-texto-secundario);
-    /* ATUALIZADO: fonte reduzida e margem */
     font-size: 0.85rem;
     margin-bottom: 15px;
     flex-grow: 1; 
 }
 .preco {
-    /* ATUALIZADO: fonte e margem reduzidas */
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--cor-acento);
@@ -517,6 +510,30 @@ section {
     width: 100%;
     text-align: center;
 }
+
+/* ATUALIZADO: Força 2 colunas no mobile para a loja */
+@media (max-width: 768px) {
+    .loja-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+        gap: 15px; /* Gap menor para caber */
+    }
+    
+    /* Ajustes finos para os cards menores */
+    .produto-info {
+        padding: 15px;
+    }
+    .produto-info h3 {
+        font-size: 1rem; /* Fonte menor no mobile */
+    }
+    .produto-info .btn {
+        padding: 10px 15px; /* Botão menor */
+        font-size: 0.9rem;
+    }
+    .preco {
+        font-size: 1.2rem;
+    }
+}
+
 
 /* ---- ========================== ---- */
 /* ----  ATUALIZAÇÕES DE ESTILO    ---- */

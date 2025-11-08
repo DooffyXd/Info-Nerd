@@ -54,6 +54,11 @@ section {
     padding: 100px 0;
 }
 
+/* ATUALIZADO: Padding da seção de serviços reduzido */
+#servicos {
+    padding-top: 80px; 
+}
+
 .section-title {
     font-size: 2.8rem;
     font-weight: 700;
@@ -99,7 +104,6 @@ section {
     color: var(--cor-fundo-escuro);
 }
 
-/* Acessibilidade: Esconde o label visualmente mas o mantém para leitores de tela */
 .sr-only {
     position: absolute;
     width: 1px;
@@ -171,12 +175,9 @@ section {
 
 /* ---- SEÇÃO HERO (CORRIGIDA) ---- */
 .hero {
-    /* min-height: 100vh; */ /* <-- Linha problemática removida */
-    
-    /* Adicionado padding para controlar o espaço */
-    padding-top: 180px;     /* Espaço para o header fixo */
-    padding-bottom: 10px;  /* Espaço até a próxima seção */
-
+    /* min-height: 100vh; */ /* REMOVIDO para diminuir rolagem */
+    padding-top: 180px;     
+    padding-bottom: 120px;  
     display: flex;
     align-items: center;
     text-align: center;
@@ -200,7 +201,7 @@ section {
     margin: 0 10px;
 }
 
-/* ---- SEÇÃO SERVIÇOS ---- */
+/* ---- SEÇÃO SERVIÇOS (COM MELHORIAS DE UX) ---- */
 .servicos-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -214,6 +215,9 @@ section {
     text-align: center;
     border: 1px solid rgba(255, 255, 255, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative; /* ATUALIZADO: Para posicionar a seta */
+    cursor: pointer; /* ATUALIZADO: Indica que é clicável */
+    padding-bottom: 60px; /* ATUALIZADO: Espaço para a seta */
 }
 
 .servico-card:hover {
@@ -230,7 +234,29 @@ section {
 .servico-card h3 {
     font-size: 1.5rem;
     margin-bottom: 15px;
+    color: var(--cor-texto);
 }
+
+.servico-card p {
+    color: var(--cor-texto-secundario);
+}
+
+/* NOVO: Estilo para a seta indicadora */
+.servico-card-arrow {
+    position: absolute;
+    bottom: 25px;
+    right: 30px;
+    font-size: 1.3rem;
+    color: var(--cor-acento);
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+.servico-card:hover .servico-card-arrow {
+    opacity: 1;
+    transform: translateX(5px); /* Efeito de "apontar" */
+}
+
 
 /* ---- SEÇÃO DIFERENCIAIS ---- */
 .diferenciais {
@@ -335,7 +361,7 @@ section {
 @media (max-width: 768px) {
     .navbar {
         position: absolute;
-        top: 100%; /* Posiciona logo abaixo do header */
+        top: 100%; 
         left: 0;
         width: 100%;
         background-color: var(--cor-fundo-card);
@@ -345,7 +371,6 @@ section {
         flex-direction: column;
         align-items: center;
         
-        /* Animação suave */
         clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
         transition: clip-path 0.4s ease-out, padding 0.4s ease-out;
     }
@@ -366,6 +391,22 @@ section {
     .hero-text h1 { font-size: 2.5rem; }
     .hero-text p { font-size: 1rem; }
     .hero-buttons { display: flex; flex-direction: column; gap: 15px; align-items: center;}
+    
+    /* ATUALIZADO: Regra para scroll horizontal dos cards no mobile */
+    .servicos-grid {
+        /* Força os cards a ficarem em colunas, mesmo no mobile */
+        grid-auto-flow: column; 
+        /* Define o tamanho de cada card, 80% da largura da tela */
+        grid-template-columns: repeat(3, 80vw); 
+        overflow-x: auto; /* A mágica do scroll horizontal */
+        -webkit-overflow-scrolling: touch; /* Melhora a sensação no iOS */
+        scroll-snap-type: x mandatory; /* Faz o scroll "travar" no card */
+        padding-bottom: 20px; /* Espaço para a barra de scroll */
+    }
+    
+    .servico-card {
+        scroll-snap-align: start; /* Alinha o card no início da tela ao "travar" */
+    }
 }
 
 /* ---- ========================== ---- */
@@ -373,14 +414,11 @@ section {
 /* ---- ========================== ---- */
 
 .loja {
-    /* Adiciona um padding-top para compensar o header fixo, 
-       já que esta é a primeira seção da página */
     padding-top: 140px; 
 }
 
 .loja-grid {
     display: grid;
-    /* Reutiliza a mesma lógica de grid dos serviços */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
     gap: 30px;
 }
@@ -390,7 +428,7 @@ section {
     border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden; /* Garante que a imagem não vaze das bordas arredondadas */
+    overflow: hidden; 
 }
 
 .produto-card:hover {
@@ -400,8 +438,8 @@ section {
 
 .produto-card img {
     width: 100%;
-    height: 250px; /* Altura fixa para todas as imagens */
-    object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
+    height: 250px; 
+    object-fit: cover; 
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -409,7 +447,7 @@ section {
     padding: 25px;
     display: flex;
     flex-direction: column;
-    height: calc(100% - 250px); /* Faz todos os cards terem a mesma altura */
+    height: calc(100% - 250px); 
 }
 
 .produto-info h3 {
@@ -421,7 +459,7 @@ section {
     color: var(--cor-texto-secundario);
     font-size: 0.9rem;
     margin-bottom: 20px;
-    flex-grow: 1; /* Empurra o preço e o botão para baixo */
+    flex-grow: 1; 
 }
 
 .preco {
@@ -439,8 +477,7 @@ section {
 /* ---- ========================== ---- */
 /* ----  ATUALIZAÇÕES DE ESTILO    ---- */
 /* ---- ========================== ---- */
-
-/* Garante que o texto dentro dos cards de serviço não fique azul (cor padrão de link) */
+/* (Estes estilos já estavam corretos) */
 .servico-card h3 {
     color: var(--cor-texto);
 }
@@ -449,18 +486,14 @@ section {
     color: var(--cor-texto-secundario);
 }
 
-/* Ajustes para a nova página de orçamento (orcamento.html) */
 body.pagina-orcamento main {
     display: flex;
     align-items: center;
-    /* Calcula a altura da tela menos o header (aprox. 81px) e o footer (aprox. 121px)
-      Isso ajuda a centralizar o formulário verticalmente.
-    */
     min-height: calc(100vh - 81px - 121px);
 }
 
 body.pagina-orcamento .contato {
-    padding-top: 140px; /* Compensa o header fixo */
+    padding-top: 140px; 
     padding-bottom: 100px;
     width: 100%;
 }
@@ -470,12 +503,12 @@ body.pagina-orcamento .contato {
 /* ---- ========================== ---- */
 
 .pc-builder {
-    padding-top: 140px; /* Compensa o header fixo */
+    padding-top: 140px; 
 }
 
 .builder-wrapper {
     display: grid;
-    grid-template-columns: 2fr 1fr; /* Coluna da esquerda 2/3, direita 1/3 */
+    grid-template-columns: 2fr 1fr; 
     gap: 40px;
 }
 
@@ -495,11 +528,10 @@ body.pagina-orcamento .contato {
 .componente-grupo label i {
     margin-right: 8px;
     color: var(--cor-acento);
-    width: 20px; /* Alinha os ícones */
+    width: 20px; 
     text-align: center;
 }
 
-/* Estilo para os <select> da ferramenta */
 .builder-select {
     width: 100%;
     padding: 15px;
@@ -510,10 +542,9 @@ body.pagina-orcamento .contato {
     font-size: 1rem;
     font-family: var(--fonte-principal);
     transition: border-color 0.3s ease;
-    -webkit-appearance: none; /* Remove seta padrão do iOS */
-    -moz-appearance: none; /* Remove seta padrão do Firefox */
-    appearance: none; /* Remove seta padrão */
-    /* Adiciona uma seta personalizada */
+    -webkit-appearance: none; 
+    -moz-appearance: none; 
+    appearance: none; 
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%2300f5c3' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: right 15px center;
@@ -526,16 +557,13 @@ body.pagina-orcamento .contato {
     border-color: var(--cor-acento);
 }
 
-/* Caixa de Resumo na Direita */
 .builder-resumo-box {
     background-color: var(--cor-fundo-card);
     border-radius: 12px;
     padding: 30px;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    
-    /* Efeito "Sticky" - O box segue o scroll */
     position: sticky; 
-    top: 120px; /* 100px do header + 20px de margem */
+    top: 120px; 
 }
 
 .builder-resumo-box h3 {
@@ -569,13 +597,14 @@ body.pagina-orcamento .contato {
     margin-right: 8px;
 }
 
-/* Responsividade para a ferramenta */
 @media (max-width: 992px) {
     .builder-wrapper {
-        grid-template-columns: 1fr; /* Colunas empilhadas */
+        grid-template-columns: 1fr; 
     }
 
     .builder-resumo-box {
-        position: static; /* Desativa o "sticky" em telas menores */
+        position: static; 
     }
 }
+
+
